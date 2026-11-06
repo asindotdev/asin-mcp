@@ -4,7 +4,7 @@ import {
   AsinError,
   AsinSerializationError,
   type ApiResponse,
-} from "@asindotdev/sdk";
+} from "@asindev/sdk";
 
 import { redact } from "./redaction.js";
 

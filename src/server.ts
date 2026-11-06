@@ -1,6 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
-import type { AsinClient } from "@asindotdev/sdk";
+import type { AsinClient } from "@asindev/sdk";
 import { z } from "zod";
 
 import { CATALOG, MODE } from "./catalog.js";

@@ -1,5 +1,5 @@
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
-import { AsinClient, type AsinClientOptions } from "@asindotdev/sdk";
+import { AsinClient, type AsinClientOptions } from "@asindev/sdk";
 
 import { createAsinMcpServer, type ToolClient } from "./server.js";
 

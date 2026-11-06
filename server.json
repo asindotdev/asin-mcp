@@ -12,7 +12,7 @@
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "@asindotdev/mcp",
+      "identifier": "@asindev/mcp",
       "version": "0.1.0",
       "environmentVariables": [
         {

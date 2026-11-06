@@ -3,7 +3,7 @@ import { describe, it } from "node:test";
 
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
-import { AsinClient, type AsinFetch } from "@asindotdev/sdk";
+import { AsinClient, type AsinFetch } from "@asindev/sdk";
 
 import { CATALOG, MODE } from "../src/catalog.js";
 import { createHttpHandler } from "../src/http.js";
