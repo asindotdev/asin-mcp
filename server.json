@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.asin/mcp",
+  "title": "Asin",
+  "description": "Track Amazon prices and products with a scheduled watchlist, price history, offers and alerts.",
+  "version": "0.1.0",
+  "websiteUrl": "https://www.asin.dev",
+  "repository": {
+    "url": "https://github.com/asindotdev/asin-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@asindotdev/mcp",
+      "version": "0.1.0",
+      "environmentVariables": [
+        {
+          "name": "ASIN_API_KEY",
+          "description": "Bearer followed by your Asin API key.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.asin.dev/api/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer followed by your Asin API key.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

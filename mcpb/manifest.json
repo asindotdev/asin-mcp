@@ -1,0 +1,104 @@
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/mcpb/main/schemas/mcpb-manifest-v0.4.schema.json",
+  "manifest_version": "0.4",
+  "name": "asin-mcp",
+  "display_name": "Asin",
+  "version": "0.1.0",
+  "description": "Asin Amazon price tracking API for Claude.",
+  "long_description": "Track Amazon prices and products with a scheduled watchlist, price history, offers and alerts.",
+  "author": {
+    "name": "Asin",
+    "email": "contact@asin.dev",
+    "url": "https://www.asin.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asindotdev/asin-mcp"
+  },
+  "homepage": "https://www.asin.dev",
+  "documentation": "https://github.com/asindotdev/asin-mcp#readme",
+  "support": "mailto:contact@asin.dev",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/dist/stdio.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/dist/stdio.js"],
+      "env": {
+        "ASIN_API_KEY": "${user_config.ASIN_API_KEY}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "check_product",
+      "description": "Asks for a check right away (1 credit), at most once per 5 minutes; earlier calls return the product unchanged. A paused product has to be resumed first. The check runs in the background; with wait=t…"
+    },
+    {
+      "name": "delete_product",
+      "description": "Removes the product and its price history."
+    },
+    {
+      "name": "fetch_offers",
+      "description": "Reads the offers on Amazon for 1 credit, refunded if it doesn't answer. A read made in the last 3 hours, by anyone, is returned instead, for free (charged: false). The answer is the same as GET /offe…"
+    },
+    {
+      "name": "get_account",
+      "description": "Your plan, the credits left (monthly allowance and packs), how many products you track and the credits they use per month."
+    },
+    {
+      "name": "get_asin_history",
+      "description": "Every price Asin read for an ASIN on a marketplace over the period, whoever tracks it, oldest first, with the lowest, highest and average of those prices. A history of more than 5000 points is thinne…"
+    },
+    {
+      "name": "get_offers",
+      "description": "Who sells the product and at what price, as last read, cheapest first, with Amazon's own price and the cheapest new and used offers (used is only known for Amazon's own outlet). Free: this never read…"
+    },
+    {
+      "name": "get_product",
+      "description": "The product's latest state and every price read of the period, oldest first. The history covers every read of this ASIN on this marketplace, including those made before you added it, so a product add…"
+    },
+    {
+      "name": "list_products",
+      "description": "Your watchlist, newest first, with each product's latest state and its recent prices (trend). Filter with asin (and marketplace) to know if a product is tracked, or with filter to get the same lists…"
+    },
+    {
+      "name": "search_amazon",
+      "description": "Amazon search results (up to 60, sponsored included), to find the ASIN of a product. Free, limited to 30 searches per hour."
+    },
+    {
+      "name": "track_product",
+      "description": "Adds an ASIN, an Amazon link or a short link (amzn.to, a.co…) to your watchlist. The first check runs in the background within seconds (checking is true until then): poll GET /products/{id}, or send…"
+    },
+    {
+      "name": "update_product",
+      "description": "Target price, drop alerts, check interval, or pause. Send only what changes."
+    }
+  ],
+  "tools_generated": false,
+  "keywords": [
+    "mcp",
+    "asin",
+    "amazon-api",
+    "price-tracking",
+    "price-history",
+    "asin"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=20"
+    }
+  },
+  "user_config": {
+    "ASIN_API_KEY": {
+      "type": "string",
+      "title": "Asin API key",
+      "description": "Your API key from https://www.asin.dev/app.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}
