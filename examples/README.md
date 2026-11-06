@@ -9,5 +9,5 @@ Inspect the tools without an AI client:
 
 ```sh
 export ASIN_API_KEY="YOUR_API_KEY"
-npx @modelcontextprotocol/inspector npx -y @asindotdev/mcp
+npx @modelcontextprotocol/inspector npx -y @asindev/mcp
 ```

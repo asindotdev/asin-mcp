@@ -2,7 +2,7 @@
 import process from "node:process";
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { AsinClient } from "@asindotdev/sdk";
+import { AsinClient } from "@asindev/sdk";
 
 import { redact } from "./redaction.js";
 import { createAsinMcpServer } from "./server.js";

@@ -27,7 +27,7 @@ Or run it locally over stdio:
   "mcpServers": {
     "asin": {
       "command": "npx",
-      "args": ["-y", "@asindotdev/mcp"],
+      "args": ["-y", "@asindev/mcp"],
       "env": {
         "ASIN_API_KEY": "YOUR_API_KEY"
       }

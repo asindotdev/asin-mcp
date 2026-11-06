@@ -1,5 +1,5 @@
 {
-  "name": "@asindotdev/mcp",
+  "name": "@asindev/mcp",
   "version": "0.1.0",
   "description": "Asin MCP server: Track Amazon prices and products with a scheduled watchlist, price history, offers and alerts.",
   "type": "module",
@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "@asindotdev/sdk": "^0.1.0",
+    "@asindev/sdk": "^0.1.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {

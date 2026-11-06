@@ -39,7 +39,7 @@ The hosted server and this package expose the same API; run the package locally 
 ### Claude Code
 
 ```sh
-claude mcp add asin --env ASIN_API_KEY=YOUR_API_KEY -- npx -y @asindotdev/mcp
+claude mcp add asin --env ASIN_API_KEY=YOUR_API_KEY -- npx -y @asindev/mcp
 ```
 
 ### Claude Desktop, Cursor, Windsurf and other clients
@@ -51,7 +51,7 @@ Add the server to the client's MCP configuration (`claude_desktop_config.json`, 
   "mcpServers": {
     "asin": {
       "command": "npx",
-      "args": ["-y", "@asindotdev/mcp"],
+      "args": ["-y", "@asindev/mcp"],
       "env": {
         "ASIN_API_KEY": "YOUR_API_KEY"
       }
@@ -68,7 +68,7 @@ Add the server to the client's MCP configuration (`claude_desktop_config.json`, 
     "asin": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@asindotdev/mcp"],
+      "args": ["-y", "@asindev/mcp"],
       "env": {
         "ASIN_API_KEY": "${input:asin-api-key}"
       }
@@ -117,7 +117,7 @@ Every tool that calls the API consumes credits. JSON results are returned as tex
 ## Streamable HTTP
 
 ```sh
-npx @asindotdev/mcp --http --port 3000
+npx @asindev/mcp --http --port 3000
 ```
 
 The endpoint is `POST /mcp` (stateless, JSON responses). Each client sends its own key in the `x-api-key` header (or `Authorization: Bearer <key>`); the server never uses a key of its own. It binds to `127.0.0.1` by default and rejects browser origins unless you allow them — put it behind TLS before exposing it.
@@ -125,7 +125,7 @@ The endpoint is `POST /mcp` (stateless, JSON responses). Each client sends its o
 `createHttpHandler()` is exported for Fetch-compatible runtimes (Cloudflare Workers, Deno, Bun):
 
 ```ts
-import { createHttpHandler } from "@asindotdev/mcp";
+import { createHttpHandler } from "@asindev/mcp";
 
 export default { fetch: createHttpHandler({ allowedOrigins: [] }) };
 ```
@@ -147,7 +147,7 @@ npx @modelcontextprotocol/inspector node dist/stdio.js
 
 ## Built on the SDK
 
-The server uses the official [Node.js SDK](https://github.com/asindotdev/asin-node) (`@asindotdev/sdk`).
+The server uses the official [Node.js SDK](https://github.com/asindotdev/asin-node) (`@asindev/sdk`).
 
 ## License
 
